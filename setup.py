@@ -235,7 +235,7 @@ class CMakeBuild(build_ext):
         # specified.
         #if not has_ninja() or self.parallel:
         #    build_args += ["-j{}".format(self.parallel) if self.parallel else "-j"]
-	build_args += ["-j2"]
+		    build_args += ["-j2"]
 
         cmake_args += [
             "-DBUILD_GUI_VIEWERS={}".format("ON" if not args.headless else "OFF")
