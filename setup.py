@@ -233,8 +233,9 @@ class CMakeBuild(build_ext):
         # doesn't require a number (but builds sequentially by default), so we
         # add the argument only when it's not ninja or the number of jobs is
         # specified.
-        if not has_ninja() or self.parallel:
-            build_args += ["-j{}".format(self.parallel) if self.parallel else "-j"]
+        #if not has_ninja() or self.parallel:
+        #    build_args += ["-j{}".format(self.parallel) if self.parallel else "-j"]
+	build_args += ["-j2"]
 
         cmake_args += [
             "-DBUILD_GUI_VIEWERS={}".format("ON" if not args.headless else "OFF")
